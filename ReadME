@@ -1,0 +1,3 @@
+The source code runs on CS aero machine. The makefile is tailored for the cs machine's platform.
+
+geometry_file contains downloaded .ply scene description file as well as a script to turn that file into .ray format.
