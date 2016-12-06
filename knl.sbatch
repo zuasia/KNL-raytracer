@@ -8,4 +8,5 @@
 
 #./ray -r 1 geometry_file/scenes/polymesh/dragon1.ray test.bmp
 #./ray -r 1 geometry_file/scenes/polymesh/simple.ray test.bmp
-./ray -r 1 geometry_file/scenes/polymesh/trimesh1.ray test.bmp
+export OMP_NUM_THREADS=256
+./ray -r 1 geometry_file/scenes/polymesh/trimesh2.ray test.bmp

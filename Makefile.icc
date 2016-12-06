@@ -4,9 +4,9 @@
 
 LIBS = -lGL -lGLU -ljpeg -lpng -lz
 
-CFLAGS = -g -O2 -std=c++11 -pthread $(LIBS) -fopenmp
+CFLAGS = -g -O3 -std=c++11 -xMIC-AVX512 -pthread $(LIBS) -qopenmp -DUSE_MMAP_LARGE -DUSE_MMAP_LARGE_EXT
 
-CC = g++
+CC = icc
 
 .SUFFIXES: .o .cpp .cxx
 
