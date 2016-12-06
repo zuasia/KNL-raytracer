@@ -4,7 +4,7 @@
 
 LIBS = -L/usr/lib/nvidia-352 -lGL -lGLU -ljpeg -lpng -lz
 
-CFLAGS = -g -O2 -std=c++11 -pthread $(INCLUDE) $(LIBS) 
+CFLAGS = -g -O2 -std=c++11 -pthread $(INCLUDE) $(LIBS) -fopenmp
 
 CC = g++
 
@@ -33,7 +33,7 @@ ray: $(ALL.O)
 	$(CC) $(CFLAGS) -o $@ $(ALL.O) $(LIBS)
 
 clean:
-	rm -f $(ALL.O)
+	rm -f $(ALL.O) *.bmp *.report
 
 clean_all:
 	rm -f $(ALL.O) ray
