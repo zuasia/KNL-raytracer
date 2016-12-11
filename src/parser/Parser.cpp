@@ -811,6 +811,7 @@ void Parser::parseAreaLight( Scene* scene )
 
 			 int sample_count, area_check;
 			 area_check = traceUI->getAreaLightCheck();
+			 area_check = true;
 			 sample_count = traceUI->getAreaLightSampleNum();
 
 			 Vec4d point_position;

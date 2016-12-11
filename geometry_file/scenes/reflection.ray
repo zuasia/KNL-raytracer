@@ -63,6 +63,7 @@ translate( 0,-3.5,3,
 				shininess = 0.0;
 			}})))
 
+/*
 translate( 3.5,0,0,
 	scale(20,
 		rotate(0,1,0,-1.57,
@@ -74,3 +75,4 @@ translate( 3.5,0,0,
 				reflective = (0.8,0.8,0.8)
 				shininess = 1.0;
 			}})))
+*/

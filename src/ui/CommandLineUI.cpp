@@ -64,6 +64,7 @@ int CommandLineUI::run()
 		printf("loop = %d\n", height * width); 
 		
 
+/*
 		double startComputeTime, endComputeTime, computeDuration;
 		for( int j = 0; j < height; ++j )
 			for( int i = 0; i < width; ++i ) {
@@ -75,9 +76,9 @@ int CommandLineUI::run()
 				computeDuration = endComputeTime - startComputeTime;
 				printf("Compute: %.3f ms\t\n", 1000.f * computeDuration);
 			}
+*/
 		
 
-/*
 		double startComputeTime = CycleTimer::currentSeconds();
 
 		OMP("omp parallel") 
@@ -97,7 +98,6 @@ int CommandLineUI::run()
 		double endComputeTime = CycleTimer::currentSeconds();
 		double computeDuration = endComputeTime - startComputeTime;
 		printf("Compute: %.3f ms\t\n", 1000.f * computeDuration);
-*/
 
 		// save image
 		unsigned char* buf;
