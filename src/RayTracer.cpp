@@ -249,10 +249,8 @@ Vec3d RayTracer::traceRay(ray& r, int depth)
 					reflect_color += tmp_color;
 				}
 				reflect_color /= total_coefficient;
-				//cout<<"nohaha\n";
 			}
 			else {
-				//cout<<"haha\n";
 				ray reflect(pos,reflect_dir,ray::VISIBILITY);
 				tmp_color = traceRay(reflect, depth);
 				tmp_color %= m.kr(i);
@@ -287,7 +285,6 @@ Vec3d RayTracer::traceRay(ray& r, int depth)
 
 
 				if ( sin_refract <1 ) {
-					cout<<"haha\n";
 					Vec3d tangent;
 					tangent = (income_dir + c*normal);
 					tangent.normalize();

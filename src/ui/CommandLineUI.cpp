@@ -63,18 +63,21 @@ int CommandLineUI::run()
 		raytracer->traceSetup( width, height );
 		printf("loop = %d\n", height * width); 
 		
-/*
-		clock_t start, end;
-		start = clock();
 
+		double startComputeTime, endComputeTime, computeDuration;
 		for( int j = 0; j < height; ++j )
-			for( int i = 0; i < width; ++i )
+			for( int i = 0; i < width; ++i ) {
+				startComputeTime = CycleTimer::currentSeconds();
+
 				raytracer->tracePixel(i,j);
 
-		end=clock();
-		printf("time  = %d\n", (end - start));
-*/
+				endComputeTime = CycleTimer::currentSeconds();
+				computeDuration = endComputeTime - startComputeTime;
+				printf("Compute: %.3f ms\t\n", 1000.f * computeDuration);
+			}
 		
+
+/*
 		double startComputeTime = CycleTimer::currentSeconds();
 
 		OMP("omp parallel") 
@@ -84,13 +87,17 @@ int CommandLineUI::run()
 			{
 				int i = j % height;
 				int m = (j - i)/height;
+
+
 				raytracer->tracePixel(m,i);
+
 			}
 		}
 
 		double endComputeTime = CycleTimer::currentSeconds();
 		double computeDuration = endComputeTime - startComputeTime;
 		printf("Compute: %.3f ms\t\n", 1000.f * computeDuration);
+*/
 
 		// save image
 		unsigned char* buf;

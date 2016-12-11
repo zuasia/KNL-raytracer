@@ -17,13 +17,15 @@ camera {
 */
 
 directional_light {
-	direction = (0, 0, 1);
+	direction = (0, -1, 1);
 	colour = (1.0, 1.0, 1.0);
 }
 
+/*
 point_light {
 	position = (-1,4,-0.4);
-	colour = (1.0,1.0,0.7)
+	//colour = (1.0,1.0,0.7)
+	colour = (1.0,1.0,1.0)
 	constant_attenuation_coeff= 0.25;
 	linear_attenuation_coeff = 0.003372407;
 	quadratic_attenuation_coeff = 0.000045492;	
@@ -31,38 +33,21 @@ point_light {
 
 point_light {
 	position = (3,0,-4);
-	colour = (0.0,1.0,0.0)
+	//colour = (0.0,1.0,0.0)
+	colour = (1.0,1.0,1.0)
 	constant_attenuation_coeff= 0.25;
 	linear_attenuation_coeff = 0.003372407;
 	quadratic_attenuation_coeff = 0.000045492;	
 }
-
- translate(-1,0,0,
- 	scale(0.8,
-		sphere { 
-			material = { 
-				diffuse = (0.4,0.4,0);
-				specular = (0.8,0.8,0);
-				shininess = 102.4;
-			} 
-		}))
-
- translate(0.6,0,-2,
-	scale(0.6,
-		sphere { 
-			material = { 
-				diffuse = (0.0,0.4,0.4);
-				specular = (0.0,0.8,0.8);
-				shininess = 115.2;
-			} 
-		}))
+*/
 
 translate( 0,0,6,
 	scale(20,
 		rotate(1,0,0,3.1415,
 		square { 
 			material = { 
-				diffuse = (0.2,0.1,0.1);
+				//diffuse = (0.2,0.1,0.1);
+				diffuse = map("textry.png");
 				specular = (1.0,1.0,1.0);
 				shininess = 128.0;
 			}})))
@@ -72,7 +57,10 @@ translate( 0,-3.5,3,
 		rotate(1,0,0,-1.57,
 			square { 
 				material = { 
-					diffuse = (0.4,0.4,0.4) 
+				diffuse = (0.4,0.4,0.4) 
+				specular = (1.0,1.0,1.0);
+				reflective = (0.8,0.8,0.8)
+				shininess = 0.0;
 			}})))
 
 translate( 3.5,0,0,
@@ -80,5 +68,9 @@ translate( 3.5,0,0,
 		rotate(0,1,0,-1.57,
 			square { 
 				material = { 
-					diffuse = (0.4,0.4,0.4) 
+				//	diffuse = (0.4,0.4,0.4) 
+				diffuse = (1.0,1.0,1.0);
+				specular = (1.0,1.0,1.0);
+				reflective = (0.8,0.8,0.8)
+				shininess = 1.0;
 			}})))
