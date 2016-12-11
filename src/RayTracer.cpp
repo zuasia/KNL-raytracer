@@ -51,6 +51,11 @@ Vec3d RayTracer::trace(double x, double y)
   focal_dist = traceUI->getDofDist();
   aperture_size = traceUI->getDofApertureSize();
 
+  //dof = true;
+  //simulate_count = 20;
+  //focal_dist = -8;
+  //aperture_size = 0.03;
+
   if (dof) {
 	  double cos_ray, image_dist;
 	  Vec3d focal_point, image_point;
